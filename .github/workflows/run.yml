@@ -315,7 +315,7 @@ jobs:
         if git ls-remote --heads origin data | grep -q data; then
           echo "data 分支已存在，切换到 data 分支 / Data branch exists, switching to data branch"
           git fetch origin data:data
-          git checkout data
+          git checkout -f data
           git pull origin data || true
         else
           echo "data 分支不存在，创建新分支 / Data branch does not exist, creating new branch"
